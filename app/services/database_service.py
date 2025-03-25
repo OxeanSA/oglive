@@ -19,75 +19,15 @@ client = MongoClient(uri)
 _db = client.get_database("v2db")
 
 # collections: tables
-users_collection = _db.get_collection("users")
-posts_collection = _db.posts.aggregate([
-    {
-        '$lookup':
-            {
-                'from': "users",
-                'localField': "user_id",
-                'foreignField': "user_id",
-                'as': "user_id"
-            }
-    }
-])
-likes_collection = _db.likes.aggregate([
-    {
-        '$lookup':
-            {
-                'from': "posts",
-                'localField': "post_id",
-                'foreignField': "post_id",
-                'as': "post_id"
-            }
-    }
-])
-comments_collection = _db.comments.aggregate([
-    {
-        '$lookup':
-            {
-                'from': "posts",
-                'localField': "post_id",
-                'foreignField': "post_id",
-                'as': "post_id"
-            }
-    }
-])
-forwards_collection = _db.get_collection("forwards").aggregate([
-    {
-        '$lookup':
-            {
-                'from': "posts",
-                'localField': "post_id",
-                'foreignField': "post_id",
-                'as': "post_id"
-            }
-    }
-])
+users_collection = _db.users
+posts_collection = _db.posts
+likes_collection = _db.likes
+comments_collection = _db.comments
+forwards_collection = _db.get_collection("forwards")
 group_chats_collection = _db.get_collection("group_chats")
 group_chat_members_collection = _db.get_collection("goup_chat_members")
-messages_collection = _db.get_collection("messages").aggregate([
-    {
-        '$lookup':
-            {
-                'from': "users",
-                'localField': "sender_id",
-                'foreignField': "user_id",
-                'as': "user_id"
-            }
-    }
-])
-notifications_collection = _db.get_collection("notifications").aggregate([
-    {
-        '$lookup':
-            {
-                'from': "users",
-                'localField': "user_id",
-                'foreignField': "user_id",
-                'as': "user_id"
-            }
-    }
-])
+messages_collection = _db.get_collection("messages")
+notifications_collection = _db.get_collection("notifications")
 
 # User Operations
 def get_user(user_id: int) -> dict:
