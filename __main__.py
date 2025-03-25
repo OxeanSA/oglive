@@ -5,16 +5,16 @@ import time
 import os
 
 port = "5000"
-server_ip = get_ip()
+host = get_ip()
 #app = create_app()
 
 if __name__ == '__main__':
 #	os.system('clear')
 	print("V2 API Server")
-	create_app()
-#	app.listen(port=int(port), address=server_ip)
+	create_app(host)
+#	app.listen(port=int(port), address=host)
 	time.sleep(1)
-	print("IP: " + server_ip)
+	print("IP: " + host)
 	time.sleep(1)
 	print("Port: " + port)
 	time.sleep(1)
