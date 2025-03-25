@@ -5,7 +5,8 @@ import time
 import os
 
 port = "5000"
-host = get_ip()
+#host = get_ip()
+host = "13.61.35.169"
 #app = create_app()
 
 if __name__ == '__main__':
