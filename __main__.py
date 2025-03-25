@@ -4,7 +4,7 @@ from app.exts import get_ip
 import time
 import os
 
-port = "80"
+port = "5000"
 server_ip = get_ip()
 app = create_app()
 
