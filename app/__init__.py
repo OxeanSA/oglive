@@ -31,8 +31,9 @@ def create_app(host):
 
     handle_requests(app)
     handle_sockets(socketio, app)
-   
-    server = HTTPServer(WSGIContainer(app))    return server
+
+    server = HTTPServer(WSGIContainer(app))
+    return server
 
 
 
