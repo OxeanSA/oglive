@@ -12,7 +12,7 @@ from app.resources.pages import page_namespace
 from app.resources.v1 import v1_namespace
 from flask_socketio import SocketIO
 
-def create_app(host):
+def create_app():
     app = Flask(__name__)
 
 #    app.logger.removeHandler(default_handler)
