@@ -458,14 +458,13 @@ def save_message(chat_id: int, text: str, sender: str) -> None:
         "create_at": datetime.now()
     })
 
-
+"""
 def fetch_latest_message(chat_id: int) -> dict[str, Any] | str:
-    """
     Returns latest message document sent to the chat.
 
     :prarm chat_id: The id of the chat to fetch the message.
     :return: Message document.
-    """
+    
 
     cursor = messages_collection.find({
         "chat_id": int(chat_id)
@@ -485,3 +484,4 @@ def fetch_latest_message(chat_id: int) -> dict[str, Any] | str:
     except StopIteration as error:
         logging.info(f"No messages were sent at chat with id of {chat_id} - {error}")
         return None
+"""
