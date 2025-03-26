@@ -14,7 +14,7 @@ if __name__ == '__main__':
 	os.system('clear')
 	print("V2 API Server")
 
-	app.listen(port=int(port), address=server_ip)
+	app.listen()
 	time.sleep(1)
 	print("IP: " + server_ip)
 	time.sleep(1)
