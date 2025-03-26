@@ -4,19 +4,19 @@ from app.exts import get_ip
 import time
 import os
 
-port = "5000"
-host = get_ip()
-#app = create_app()
+ort = "8501"
+server_ip = get_ip()
+app = create_app()
 
 if __name__ == '__main__':
-#	os.system('clear')
+	os.system('clear')
 	print("V2 API Server")
-	create_app(host)
-#	app.listen(port=int(port), address=host)
+
+	app.listen(port=int(port), address=server_ip)
 	time.sleep(1)
-	print("IP: " + host)
+	print("IP: " + server_ip)
 	time.sleep(1)
 	print("Port: " + port)
 	time.sleep(1)
 	print("Online •")
-#	IOLoop.instance().start()
+	IOLoop.instance().start()
