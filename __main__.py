@@ -12,7 +12,7 @@ app = create_app()
 if __name__ == '__main__':
 #	os.system('clear')
 	print("V2 API Server")
-	tornado.locale.load_translations('locale/')
+	
 	app.listen(port)
 	time.sleep(1)
 	print("IP: " + server_ip)
