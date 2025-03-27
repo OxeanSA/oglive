@@ -6,7 +6,7 @@ import time
 import os
 
 port = "8501"
-server_ip = "16.171.35.52"
+server_ip = get_ip()
 app = create_app()
 
 if __name__ == '__main__':
