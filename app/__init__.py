@@ -32,7 +32,7 @@ def create_app():
     handle_requests(app)
     handle_sockets(socketio, app)
 
-    server = HTTPServer(WSGIContainer(app))
+    server = HTTPServer(WSGIContainer(app), xheaders=True)
     return server
 
 
